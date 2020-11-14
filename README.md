@@ -20,11 +20,11 @@
 ![alt text](images/5-3.png)
 ![alt text](images/5-4.png)
 #### 6 & 7
-![alt text](images/6 7-1.png)
-![alt text](images/6 7-2.png)
-![alt text](images/6 7-3.png)
-![alt text](images/6 7-4.png)
-![alt text](images/6 7-5.png)
+![alt text](images/6%207-1.png)
+![alt text](images/6%207-2.png)
+![alt text](images/6%207-3.png)
+![alt text](images/6%207-4.png)
+![alt text](images/6%207-5.png)
 
 ## Web Server
 #### 8
