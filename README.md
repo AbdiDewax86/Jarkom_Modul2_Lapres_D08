@@ -154,9 +154,9 @@ Hasil :
 ### Soal 16
 Untuk membuat setiap melakukan pencarian pada browser dengan IP Probolinggo langsung menuju ke file semerud08.pw kita harus melakukan rewrite dengan cara membuat configurasi pada file .htaccess di folder sites-available dengan syntax seperti dibawah ini
 ![alt text](images/16-1.png)
-Setelah itu lakukan configurasi pada file semerud08.pw dan default dengan menemukan blok <Directory> untuk direktori / var / www yang menyimpan root dokumen. Aktifkan pemrosesan .htaccess dengan mengubah perintah AllowOverride dalam blok itu dari "None" menjadi "All" seperti contoh di bawah
-```c
-        . . .
+Setelah itu lakukan configurasi pada file semerud08.pw dan default dengan menemukan blok <Directory> untuk direktori / var / www yang menyimpan root dokumen. Aktifkan pemrosesan .htaccess dengan mengubah perintah AllowOverride dalam blok itu dari "None" menjadi "All" seperti contoh di bawah.
+    ```c
+         . . .
 
         <Directory /var/www/>
             Options Indexes FollowSymLinks
@@ -165,8 +165,8 @@ Setelah itu lakukan configurasi pada file semerud08.pw dan default dengan menemu
         </Directory>
 
         . . .
-     ```
-      
+    ```
+    
 ![alt text](images/16-2.png)
 ![alt text](images/16-3.png)
 
