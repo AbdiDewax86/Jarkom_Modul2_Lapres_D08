@@ -51,14 +51,23 @@ Dlm client, ditambahkan IP MOJOKERTO dlm /etc/resolv.conf
 ![alt text](images/5-4.png)
 ### Soal 6 & 7
 Untuk membuat mendelegasikan subdomain dengan nama alamat http://gunung.semerud08.pw pertama kita harus mengkonsfigurasi pada server Malang di file bind yang kita buat dengan membuat ns1 dan di arahkan ke server Mojokerto
+
 ![alt text](images/6%207-1.png)
+
 Kemudian di file named.local.conf kita buat allow transfer ke Mojokerto dan restart bind9 kita
+
 ![alt text](images/6%207-2.png)
+
 Kemudian di server Mojokerto kofigurasi pada named.local.conf alamat http://gunung.semerud08.pw 
+
 ![alt text](images/6%207-3.png)
+
 Kemudian di file gunung.semerud08.pw pada bind9 kita buat konfigurasi ke IP Probolinggo dan juga kita membuat subdomain di ke Probolinggo dengan nama naik
+
 ![alt text](images/6%207-4.png)
+
 Coba ping pada pada client gunung.semerud08.pw dan naik.gunung.semerud08.pw
+
 ![alt text](images/6%207-5.png)
 
 ## Web Server
