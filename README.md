@@ -173,8 +173,10 @@ Setelah itu lakukan configurasi pada file semerud08.pw dan default dengan menemu
 ### Soal 17
 
 Untuk membuat setiap request gambar dengan substring semeru akan menuju ke semeru.jpg. Kita akan melakukan proses rewrite pada penajakan.semerud08.pw dengan melakukan configurasi pada file .htaccess dengan mengetikkan syntax berikut.
+
 ![alt text](images/17-1.png)
-.Kemudian pada file penanjakan.semerud08.pw temukan blok <Directory /> dan biasanya ini berada di atas direktori / var / www yang menyimpan root dokumen. Aktifkan pemrosesan .htaccess dengan mengubah perintah AllowOverride dalam blok itu dari "None" menjadi "All" seperti contoh di bawah
+
+Kemudian pada file penanjakan.semerud08.pw temukan blok <Directory /> dan biasanya ini berada di atas direktori / var / www yang menyimpan root dokumen. Aktifkan pemrosesan .htaccess dengan mengubah perintah AllowOverride dalam blok itu dari "None" menjadi "All" seperti contoh di bawah
 ```c
         . . .
 
