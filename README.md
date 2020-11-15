@@ -137,17 +137,6 @@ ServerAdmin webmaster@localhost
     </Directory>
 ```
 jika pada file naik.gunung.semerud08.pw sudah ad syntax di atas hanay perlu menambahkan syntax yang tidak ada saja dan jangan lupa untuk merestart apache. Kemudian lakukan konfigurasi pada apache2.conf dan temukan blok <Directory> untuk direktori / var / www yang menyimpan root dokumen. Aktifkan pemrosesan .htaccess dengan mengubah perintah AllowOverride dalam blok itu dari "None" menjadi "All" seperti contoh di bawah
-```c
-        . . .
-
-        <Directory /var/www/>
-            Options Indexes FollowSymLinks
-            AllowOverride All
-            Require all granted
-        </Directory>
-
-        . . .
-    ```
 ![alt text](images/15-1.png)
 Hasil :
 ![alt text](images/15-2.png)
