@@ -114,14 +114,72 @@ Untuk mengatur web server naik.gunung.semerud08.pw, VirtualHost diganti dari 80 
 ![alt text](images/14-1.png)
 ![alt text](images/14-2.png)
 ### Soal 15
-Untuk membuat sistem authentation pada apache  pertama kita harus memiliki sebuat ultilitas yang disebut dengan htpasswd. Jika belum memilikinya kita harus mendownloadnya dengan cara 
-        apt-get install apache2 apache2-utils
+Untuk membuat sistem authentation pada apache  pertama kita harus memiliki sebuat ultilitas yang disebut dengan htpasswd. Jika belum memilikinya kita harus mendownloadnya dengan cara mengetikkan perintah pada uml 
+```c 
+apt-get install apache2 apache2-utils
+```
+kemudian untuk membuat sebuah user kita dapat melakukannya dengan mengetikkan pada uml perintah 
+```c
+htpasswd -c /etc/apache2/.htpasswd semeru
+```
+beberapa saat kemudian akan ad perintah untuk membuat password dan kita harus mengisinya untuk membuat password yang kita inginkan. seletah itu kita melakukan configurasi pada naik.gunung.semerud08.pw dengan menambahkan syntax berikut
+```c
+ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    <Directory "/var/www/html">
+        AuthType Basic
+        AuthName "Restricted Content"
+        AuthUserFile /etc/apache2/.htpasswd
+        Require valid-user
+    </Directory>
+```
+jika pada file naik.gunung.semerud08.pw sudah ad syntax di atas hanay perlu menambahkan syntax yang tidak ada saja dan jangan lupa untuk merestart apache. Kemudian lakukan konfigurasi pada apache2.conf dan temukan blok <Directory> untuk direktori / var / www yang menyimpan root dokumen. Aktifkan pemrosesan .htaccess dengan mengubah perintah AllowOverride dalam blok itu dari "None" menjadi "All" seperti contoh di bawah
+```c
+        . . .
+
+        <Directory /var/www/>
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        . . .
+        
+    ```
 ![alt text](images/15-1.png)
+Hasil :
 ![alt text](images/15-2.png)
 ### Soal 16
+Untuk membuat setiap melakukan pencarian pada browser dengan IP Probolinggo langsung menuju ke file semerud08.pw kita harus melakukan rewrite dengan cara membuat configurasi pada file .htaccess di folder sites-available dengan syntax seperti dibawah ini
 ![alt text](images/16-1.png)
+Setelah itu lakukan configurasi pada file semerud08.pw dan default dengan menemukan blok <Directory> untuk direktori / var / www yang menyimpan root dokumen. Aktifkan pemrosesan .htaccess dengan mengubah perintah AllowOverride dalam blok itu dari "None" menjadi "All" seperti contoh di bawah
+```c
+        . . .
+
+        <Directory /var/www/>
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        . . .```
 ![alt text](images/16-2.png)
 ![alt text](images/16-3.png)
 ### Soal 17
+Untuk membuat setiap request gambar dengan substring semeru akan menuju ke semeru.jpg. Kita akan melakukan proses rewrite pada penajakan.semerud08.pw dengan melakukan configurasi pada file .htaccess dengan mengetikkan syntax berikut
 ![alt text](images/17-1.png)
+Kemudian pada file penanjakan.semerud08.pw temukan blok <Directory /> dan biasanya ini berada di atas direktori / var / www yang menyimpan root dokumen. Aktifkan pemrosesan .htaccess dengan mengubah perintah AllowOverride dalam blok itu dari "None" menjadi "All" seperti contoh di bawah
+```c
+        . . .
+
+        <Directory />
+            Options Indexes FollowSymLinks
+            AllowOverride All
+        </Directory>
+
+        . . .
+  ```
 ![alt text](images/17-2.png)
