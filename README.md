@@ -147,7 +147,6 @@ jika pada file naik.gunung.semerud08.pw sudah ad syntax di atas hanay perlu mena
         </Directory>
 
         . . .
-        
     ```
 ![alt text](images/15-1.png)
 Hasil :
